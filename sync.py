@@ -5,7 +5,7 @@ import json
 
 ORIGINAL_API_URL = "https://worldcup26.ir/get/games"
 # ⚠️ Apni original Firebase URL yahan check kar lein
-FIREBASE_URL = "https://remote-control-test-6b79a-default-rtdb.firebaseio.com/games.json"
+FIREBASE_URL = "https://remote-control-test-6b79a-default-rtdb.firebaseio.com/.json"
 
 def sync_data():
     # 🕵️‍♂️ USER-AGENT TRICK: Server ko lage ke real Chrome browser se request aa rahi hai
