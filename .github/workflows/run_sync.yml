@@ -1,0 +1,25 @@
+name: World Cup Data Sync
+
+on:
+  schedule:
+    # ⏱️ Yeh loop har 5 minute baad background me automatic chalega
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Is se aap GitHub par manual "Run" ka button daba kar bhi test kar sakte hain
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: pip install requests
+
+    - name: Run Sync Script
+      run: python sync.py
